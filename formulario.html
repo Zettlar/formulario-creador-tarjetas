@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #3d348b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+            
+        }
+
+        h1 {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 50px;
+            font-weight: bolder;
+            color: #f7b801;
+            margin-bottom: 50px;
+            
+        }
+        #formulario {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 300px;
+        }
+
+        input {
+            height: 40px;
+            border-radius: 10px;
+            border: none;
+            padding-left: 10px;
+            font-size: 20px;
+        }
+
+        #fondo {
+            background-color: #7678ed ;
+            width: 500px;
+            height: 700px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-radius: 100px;
+            flex-direction: column;
+        }
+
+        button {
+            background-color: #f35b04;
+            height: 50px;
+            border-radius: 10px;
+        }
+
+        button:hover {
+            background-color: #f7b801;
+            cursor: pointer;
+        }
+
+        .amarillo {
+            display: flex;
+            margin-top: 50px;
+            background-color: #f7b801;
+            width: 700px;
+            height: 200px;
+            border-radius: 100px;
+            color: #f35b04;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            flex-direction: column;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            border: solid 3px black;
+        }
+
+        .amarillo.amarillo:hover {
+            background-color: #f35b04;
+            color: #f7b801;
+        }
+    </style>
+    <title>Formulario</title>
+</head>
+<body>
+
+    <div id="fondo">
+            <h1>Formulario</h1>
+    <form id="formulario">
+        <input id="Nombre" type="text" placeholder="Nombre">
+        <input id="Apellidos" type="text" placeholder="Apellido">
+        <input id="Edad" type="text" placeholder="Edad">
+        <input id="Ciudad" type="text" placeholder="Ciudad">
+        <input id="Pais" type="text" placeholder="Pais">
+        <button id="enviar">Crear tarjeta</button>
+    </form>
+    </div>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const enviar = document.getElementById("enviar")
+        const formulario = document.getElementById("formulario")
+       
+
+        enviar.addEventListener("click" , function (event){
+            event.preventDefault();
+             const nombre = document.getElementById("Nombre").value
+            const apellido = document.getElementById("Apellidos").value
+            const edad = document.getElementById("Edad").value
+            const ciudad = document.getElementById("Ciudad").value
+            const pais = document.getElementById("Pais").value
+            
+            //crear div
+            const card = document.createElement("div");
+            card.className = "amarillo"
+            card.innerHTML = `PERFIL
+            <div>${nombre}</div>
+            <div>${apellido}</div>
+            <div>${edad}</div>
+            <div>${ciudad}</div>
+            <div>${pais}</div>`
+
+            document.body.appendChild(card);
+
+        })
+
+        
+    })
+</script>
+</body>
+</html>

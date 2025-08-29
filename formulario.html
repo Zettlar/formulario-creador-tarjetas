@@ -69,10 +69,9 @@
             border-radius: 100px;
             color: #f35b04;
             text-align: center;
-            justify-content: center;
+            gap: 70px;
             align-items: center;
             font-size: 30px;
-            flex-direction: column;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             border: solid 3px black;
         }
@@ -81,6 +80,28 @@
             background-color: #f35b04;
             color: #f7b801;
         }
+
+        .avatar {
+
+            background-color: #3d348b;
+            width: 150px;
+            height: 150px;
+            border-radius: 77px;
+            margin-left: 50px;
+            
+        }
+
+        .fondo {
+             text-align: center;
+             font-size: 30px;
+             display: flex;
+             justify-content: center;
+             color:#3d348b
+
+
+
+        }
+
     </style>
     <title>Formulario</title>
 </head>
@@ -112,14 +133,37 @@
             const pais = document.getElementById("Pais").value
             
             //crear div
+            
+            
+
+
             const card = document.createElement("div");
             card.className = "amarillo"
-            card.innerHTML = `PERFIL
+            card.innerHTML = ""
+
+            //AVATAR
+
+            const avatar = document.createElement("div")
+            avatar.className = "avatar"
+            avatar.innerHTML = "Aqui el avatar"
+            
+
+            //TEXTO CARTA
+            const fondo = document.createElement("div")
+            fondo.className = "fondo"
+            fondo.innerHTML = `PERFIL
             <div>${nombre}</div>
             <div>${apellido}</div>
             <div>${edad}</div>
             <div>${ciudad}</div>
             <div>${pais}</div>`
+            
+
+            //anidar
+            card.appendChild(avatar)
+            card.appendChild(fondo)
+
+            //mostrar
 
             document.body.appendChild(card);
 
